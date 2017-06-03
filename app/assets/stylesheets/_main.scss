@@ -1,0 +1,66 @@
+.main {
+  height: 100vh;
+  width: calc(100vw - 200px);
+  margin: 0 100px;
+  padding: 10px 20px 0;
+
+  &_contents {
+    height: 2000px;
+    width: 100%;
+    margin-top: 140px;
+
+    h3 {
+      font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+      font-size: 28px;
+      line-height: 36px;
+      padding: 2px 0;
+      color: #484848;
+    }
+
+    &_picture {
+      height: 300px;
+      width: 335px;
+      padding-right: 13px;
+      display: inline-block;
+
+      &-price {
+        width: 60px;
+        display: inline-block;
+        float: left;
+        font-family: Arial;
+        font-size: 15px;
+        word-wrap: break-word;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+      }
+
+      &-name {
+        width: 275px;
+        display: inline-block;
+        float: left;
+        font-family: Arial;
+        font-size: 15px;
+        word-wrap: break-word;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+      }
+
+      &-info {
+        font-size: 14px;
+      }
+
+      &-review {
+        font-size: 12px;
+      }
+
+      img {
+        height: 222px;
+        width: 333px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
