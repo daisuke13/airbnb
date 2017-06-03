@@ -1,0 +1,105 @@
+@mixin log-in-user {
+  height: 64px;
+  width: 386px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+@mixin log-in-font {
+  font-family: "ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic","MS Gothic","ＭＳ ゴシック","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+.log-in {
+  @include log-in-font;
+  height: 533px;
+  width: 450px;
+  margin: 50px auto 0;
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 8px;
+
+
+
+  #user_email {
+    @include log-in-user;
+    @include log-in-font;
+    font-size: 15px;
+    margin: 70px 29px 0;
+  }
+
+  #user_password {
+    @include log-in-user;
+    @include log-in-font;
+    font-size: 15px;
+    margin: 14px 29px 20px;
+  }
+
+  &_check-box {
+    height: 20px;
+    width: 20px;
+    margin: 0;
+    padding-left: 29px;
+    padding-right: 6px;
+    float: left;
+  }
+
+  &_remember-me {
+    float: left;
+
+    #user_remember_me {
+      height: 1.65em;
+      width: 1.65em;
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      margin: 0;
+    }
+
+    #label_remember_me {
+      font-size: 14px;
+      top: -5px;
+    }
+
+    a {
+      @include log-in-font;
+      color: #008489;
+      font-size: 14px;
+      text-decoration: none;
+      padding: 15px;
+    }
+  }
+
+  #log-in_submit {
+    height: 64px;
+    width: 386px;
+    border-color: #ff7e82;
+    background-color: #ff7e82;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 27px;
+    margin: 40px 33px 0;
+    font-weight: normal;
+    border: 1px solid #ff7e82;
+    border-radius: 5px;
+  }
+
+  &_sign-up {
+    @include log-in-font;
+    color: #484848;
+    height: 50px;
+    width: 384px;
+    border-top: 1px solid #dce0e0;
+    margin: 50px 33px 20px;
+    padding-top: 40px;
+  }
+
+  #sign-up-btn {
+  @include log-in-font;
+  font-size: 13px;
+  color: #ff5a5f;
+  margin-left: 39px;
+  padding: 10px 20px;
+  border: 1px solid #ff5a5f;
+  border-radius: 4px;
+  text-decoration: none;
+}
+}

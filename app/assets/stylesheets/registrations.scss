@@ -1,4 +1,4 @@
-@mixin user {
+@mixin sign-up-user {
   height: 40px;
   width: 386px;
   border: 1px solid #aaa;
@@ -14,22 +14,26 @@
   border-radius: 8px;
 
   #user_email {
-    @include user;
+    @include sign-up-user;
+    font-size: 14px;
     margin: 70px 29px 0;
   }
 
   #user_name {
-    @include user;
+    @include sign-up-user;
+    font-size: 14px;
     margin: 14px 29px 0;
   }
 
   #user_password {
-    @include user;
+    @include sign-up-user;
+    font-size: 14px;
     margin: 14px 29px 0;
   }
 
   #user_password_confirmation {
-    @include user;
+    @include sign-up-user;
+    font-size: 14px;
     margin: 14px 29px 0;
   }
 
@@ -47,7 +51,7 @@
     border-radius: 5px;
   }
 
-  .log-in {
+  &_log-in {
     font-family: "ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic","MS Gothic","ＭＳ ゴシック","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #484848;
     height: 50px;
