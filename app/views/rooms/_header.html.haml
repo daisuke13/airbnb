@@ -9,15 +9,21 @@
     .header_top_search_box-b 宿泊1人
   .header_top_right-contents
     .header_top_right-contents_be-host ホストになる
-    .header_top_right-contents_look-for-host ホストする時間がない方はこちら
-    .header_top_right-contents_your-trip 旅行
-    .header_top_right-contents_your-messages メッセージ
+    - if user_signed_in?
+      / .header_top_right-contents_look-for-host ホストする時間がない方はこちら
+      .header_top_right-contents_your-trip 旅行
+      .header_top_right-contents_your-messages メッセージ
     .header_top_right-contents_help ヘルプ
-    .header_top_right-contents_mypage
-      = link_to new_user_registration_path do
-        = image_tag "mypage.png"
-.header_bottom
-  .header_bottom_recommendation
-  .header_bottom_rooms
-  .header_bottom_experience
-  .header_bottom_spots
+    - if user_signed_in?
+      .header_top_right-contents_mypage
+        / = image_tag "mypage.png"
+        / %ul
+        /   %li
+        = link_to "マイページ", "/users/#{current_user.id}"
+      .header_top_right-contents_log-out
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
+    - else
+      .header_top_right-contents_account
+        = link_to "アカウント作成", new_user_registration_path
+      .header_top_right-contents_log-in
+        = link_to "ログイン", new_user_session_path
