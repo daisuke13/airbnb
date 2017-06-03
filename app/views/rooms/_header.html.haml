@@ -1,0 +1,23 @@
+.header_top
+  .header_top_logo
+    .header_top_logo_airbnb
+      = link_to edit_user_registration_path(current_user) do
+        = image_tag "logo.png"
+  .header_top_search
+    .header_top_search_box-a どこでも
+    .header_top_search_box-a いつでも
+    .header_top_search_box-b 宿泊1人
+  .header_top_right-contents
+    .header_top_right-contents_be-host ホストになる
+    .header_top_right-contents_look-for-host ホストする時間がない方はこちら
+    .header_top_right-contents_your-trip 旅行
+    .header_top_right-contents_your-messages メッセージ
+    .header_top_right-contents_help ヘルプ
+    .header_top_right-contents_mypage
+      = link_to new_user_registration_path do
+        = image_tag "mypage.png"
+.header_bottom
+  .header_bottom_recommendation
+  .header_bottom_rooms
+  .header_bottom_experience
+  .header_bottom_spots

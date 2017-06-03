@@ -1,0 +1,59 @@
+@mixin user {
+  height: 40px;
+  width: 386px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+.sign-up {
+  height: 533px;
+  width: 450px;
+  margin: 50px auto 0;
+  padding: 0;
+  border: 2px solid grey;
+  border-radius: 8px;
+
+  #user_email {
+    @include user;
+    margin: 70px 29px 0;
+  }
+
+  #user_name {
+    @include user;
+    margin: 14px 29px 0;
+  }
+
+  #user_password {
+    @include user;
+    margin: 14px 29px 0;
+  }
+
+  #user_password_confirmation {
+    @include user;
+    margin: 14px 29px 0;
+  }
+
+  #sign-up_submit {
+    height: 64px;
+    width: 386px;
+    border-color: #ff7e82;
+    background-color: #ff7e82;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 27px;
+    margin: 50px 33px 0;
+    font-weight: normal;
+    border: 1px solid #ff7e82;
+    border-radius: 5px;
+  }
+
+  .log-in {
+    font-family: "ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic","MS Gothic","ＭＳ ゴシック","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #484848;
+    height: 50px;
+    width: 384px;
+    border-top: 1px solid #dce0e0;
+    margin: 20px 33px;
+    padding-top: 40px;
+  }
+}
