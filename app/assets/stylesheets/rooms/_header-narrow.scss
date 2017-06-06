@@ -1,5 +1,5 @@
-.header {
-  height: 100px;
+.header-narrow {
+  height: 50px;
   width: 100%;
   display: block;
   background-color: #ffffff;
@@ -69,17 +69,22 @@
 
     &_right-contents {
       height: 46px;
-      width: 575px;
+      width: 400px;
       font-size: 13px;
       color: #aaa;
       float: left;
-      padding-left: 45px;
+      padding-left: 780px;
 
       &_be-host {
         height: 16px;
         width: 102px;
         float: left;
         padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
       }
 
       &_look-for-host {

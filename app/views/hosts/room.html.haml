@@ -1,0 +1,25 @@
+%body
+  .header-room
+    .header-room_top
+      .header-room_top_logo
+        .header-room_top_logo_airbnb
+          = link_to root_path do
+            = image_tag "logo2.png"
+      .header-room_top_step ステップ1: 最初は基本情報から
+
+  .host-room2
+    .host-room2_contents
+      %h3 掲載するお部屋のタイプは？
+      .host-room2_contents_hosting
+        .host-room2_contents_hosting-question1 建物のタイプは？
+        .host-room2_contents_hosting-select1
+          = select_tag 'note[point]', options_for_select(["選択する","アパート", "バンガロー", "キャビン", "コンドミニアム", "ゲストハウス", "一軒家", "離れ", "ゲスト・スイート", "タウンハウス", "別荘"])
+        .host-room2_contents_hosting-question2 建物のカテゴリは？
+        .host-room2_contents_hosting-select2
+          = select_tag 'note[point]', options_for_select(["選択する","貸切", "個室", "シェアルーム"])
+        .host-room2_contents_hosting-back
+          = link_to "←戻る", hosts_path, id: 'back-hosting'
+        .host-room2_contents_hosting-button
+          = link_to "次へ", bedrooms_hosts_path, id: 'next-hosting'
+    .host-room2_picture
+      = image_tag "hosting-side-image2"

@@ -10,7 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601123630) do
+ActiveRecord::Schema.define(version: 20170606083107) do
+
+  create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "room_type",         null: false
+    t.string   "room_category",     null: false
+    t.integer  "acceptance_number", null: false
+    t.string   "bedrooms",          null: false
+    t.string   "beds",              null: false
+    t.string   "bathrooms",         null: false
+    t.integer  "room_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["room_id"], name: "index_information_on_room_id", using: :btree
+  end
+
+  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "postal_code",    null: false
+    t.string   "prefecture",     null: false
+    t.string   "city",           null: false
+    t.string   "street_address", null: false
+    t.string   "building",       null: false
+    t.integer  "room_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["room_id"], name: "index_locations_on_room_id", using: :btree
+  end
+
+  create_table "prices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "price",      null: false
+    t.string   "currency",   null: false
+    t.integer  "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_prices_on_room_id", using: :btree
+  end
+
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "image"
+    t.text     "discription", limit: 65535
+    t.integer  "user_id",                   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -31,4 +75,8 @@ ActiveRecord::Schema.define(version: 20170601123630) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "information", "rooms"
+  add_foreign_key "locations", "rooms"
+  add_foreign_key "prices", "rooms"
+  add_foreign_key "rooms", "users"
 end

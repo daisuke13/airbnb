@@ -1,0 +1,23 @@
+.header-narrow
+  .header-narrow_top
+    .header-narrow_top_logo
+      .header-narrow_top_logo_airbnb
+        = link_to root_path do
+          = image_tag "logo.png"
+    .header-narrow_top_right-contents
+      .header-narrow_top_right-contents_your-trip 旅行
+      .header-narrow_top_right-contents_your-messages メッセージ
+      .header-narrow_top_right-contents_help ヘルプ
+      - if user_signed_in?
+        .header-narrow_top_right-contents_mypage
+          / = image_tag "mypage.png"
+          / %ul
+          /   %li
+          = link_to "マイページ", "/users/#{current_user.id}"
+        .header-narrow_top_right-contents_log-out
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
+      - else
+        .header-narrow_top_right-contents_account
+          = link_to "アカウント作成", new_user_registration_path
+        .header-narrow_top_right-contents_log-in
+          = link_to "ログイン", new_user_session_path

@@ -1,0 +1,17 @@
+%body
+  = render 'rooms/header-narrow'
+  .host
+    .host_contents
+      %h3 さあ、#{current_user.name}さん！ホストの準備を始めましょう！
+      .host_contents_hosting
+        .host_contents_hosting-step1 ステップ1
+        .host_contents_hosting-room まずは基本情報を入力しよう！
+        .host_contents_hosting-select1
+        .host_contents_hosting-number
+        .host_contents_hosting-select2
+          = form_for [current_user, @room] do |f|
+            = f.submit "ホスティングを始める", class: "host_contents_hosting-button"
+    .host_picture
+      = image_tag "hosting-side-image"
+  = render 'rooms/footer'
+
