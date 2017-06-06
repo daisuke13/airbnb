@@ -4,7 +4,6 @@ class LocationsController < ApplicationController
   end
 
   def create
-    binding.pry
     @location = Location.new(location_params)
     if @location.save
       redirect_to new_room_price_path(@location)

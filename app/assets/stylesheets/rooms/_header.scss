@@ -73,18 +73,15 @@
       font-size: 13px;
       color: #aaa;
       float: left;
-      padding-left: 120px;
+      padding-left: 80px;
 
-      &_be-host {
+      #be_host {
         height: 16px;
         width: 102px;
         float: left;
         padding: 15px 0;
-
-        a {
-          color: #aaa;
-          text-decoration: none;
-        }
+        color: #aaa;
+        text-decoration: none;
       }
 
       &_look-for-host {

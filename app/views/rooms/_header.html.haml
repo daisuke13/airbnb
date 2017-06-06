@@ -10,17 +10,14 @@
       .header_top_search_box-b 宿泊1人
     .header_top_right-contents
       .header_top_right-contents_be-host
-        = link_to "ホストになる", new_user_room_path(current_user.id)
       - if user_signed_in?
-        / .header_top_right-contents_look-for-host ホストする時間がない方はこちら
-        .header_top_right-contents_your-trip 旅行
-        .header_top_right-contents_your-messages メッセージ
+        = link_to "ホストになる", new_user_room_path(current_user.id), id: 'be_host'
+      .header_top_right-contents_your-trip 旅行
+      .header_top_right-contents_your-messages メッセージ
       .header_top_right-contents_help ヘルプ
       - if user_signed_in?
         .header_top_right-contents_mypage
-          / = image_tag "mypage.png"
-          / %ul
-          /   %li
+
           = link_to "マイページ", "/users/#{current_user.id}"
         .header_top_right-contents_log-out
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
