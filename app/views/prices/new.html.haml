@@ -1,0 +1,21 @@
+%body
+  .header-room
+    .header-room_top
+      .header-room_top_logo
+        .header-room_top_logo_airbnb
+          = link_to root_path do
+            = image_tag "logo2.png"
+      .header-room_top_step ステップ3: 料金を入力してフィニッシュ！
+  .host-price
+    .host-price_contents
+      %h3 料金を入力してください。
+      .host-price_contents_hosting
+        = form_for [:room, @price] do |f|
+          .host-price_contents_hosting-question1 料金
+          = f.text_field :price, autofocus: true, placeholder: "例: 5000円", class: "select-default"
+          .host-price_contents_hosting-question2 通貨
+          = f.select :currency, [["選択する", "null"], ["JPY", "JPY"], ["USD", "USD"]], {}, class: "select-default"
+          = link_to "←戻る", new_user_room_path(current_user.id), class: "back-page"
+          = f.submit "次へ", class: "next-page"
+    .host-price_picture
+      = image_tag "hosting-side-image2"

@@ -6,29 +6,24 @@
           = link_to root_path do
             = image_tag "logo2.png"
       .header-room_top_step ステップ1: 最初は基本情報から
-  .host-room3
-    .host-room3_contents
+  .host-room
+    .host-room_contents
       %h3 掲載するお部屋のタイプは？
-      .host-room3_contents_hosting
+      .host-room_contents_hosting
         = form_for [:room, @information] do |f|
-          .host-room3_contents_hosting-question1 建物のタイプは？
-          .host-room3_contents_hosting-select1
-            = f.select :room_type, [["選択する", "null"], ["アパート", "アパート"], ["バンガロー", "バンガロー"], ["キャビン", "キャビン"], ["コンドミニアム", "コンドミニアム"], ["ゲストハウス", "ゲストハウス"], ["一軒家", "一軒家"], ["離れ", "離れ"], ["ゲスト・スイート", "ゲスト・スイート"], ["タウンハウス", "タウンハウス"], ["別荘", "別荘"]]
-          .host-room3_contents_hosting-question2 建物のカテゴリは？
-          .host-room3_contents_hosting-select2
-            = f.select :room_category, [["選択する", "null"], ["貸切", "貸切"], ["個室", "個室"], ["シェアルーム", "シェアルーム"]]
-          .host-room3_contents_hosting-question2 定員
-          .host-room3_contents_hosting-select2
-            = f.select :acceptance_number, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]]
-          .host-room3_contents_hosting-question2 ゲストが使用できるベッドルームの数は？
-          .host-room3_contents_hosting-select2
-            = f.select :bedrooms, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]]
-          .host-room3_contents_hosting-question2 ゲストが使えるベッドの数は？
-          .host-room3_contents_hosting-select2
-            = f.select :beds, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]]
-          .host-room3_contents_hosting-question2 バスルーム数
-          .host-room3_contents_hosting-select2
-            = f.select :bathrooms, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]]
-            = f.submit "次へ", class: "host-room3_contents_hosting-button"
-          .host-room3_picture
-            = image_tag "hosting-side-image2"
+          .host-room_contents_hosting-question1 建物のタイプは？
+          = f.select :room_type, [["選択する", "null"], ["アパート", "アパート"], ["バンガロー", "バンガロー"], ["キャビン", "キャビン"], ["コンドミニアム", "コンドミニアム"], ["ゲストハウス", "ゲストハウス"], ["一軒家", "一軒家"], ["離れ", "離れ"], ["ゲスト・スイート", "ゲスト・スイート"], ["タウンハウス", "タウンハウス"], ["別荘", "別荘"]], {}, class: "select-default"
+          .host-room_contents_hosting-question2 建物のカテゴリは？
+          = f.select :room_category, [["選択する", "null"], ["貸切", "貸切"], ["個室", "個室"], ["シェアルーム", "シェアルーム"]], {}, class: "select-default"
+          .host-room_contents_hosting-question2 定員
+          = f.select :acceptance_number, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
+          .host-room_contents_hosting-question2 ゲストが使用できるベッドルームの数は？
+          = f.select :bedrooms, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
+          .host-room_contents_hosting-question2 ゲストが使えるベッドの数は？
+          = f.select :beds, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
+          .host-room_contents_hosting-question2 バスルーム数
+          = f.select :bathrooms, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
+          = link_to "←戻る", new_user_room_path(current_user.id), class: "back-page"
+          = f.submit "次へ", class: "next-page"
+    .host-room_picture
+      = image_tag "hosting-side-image2"

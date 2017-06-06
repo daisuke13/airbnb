@@ -26,11 +26,12 @@ ActiveRecord::Schema.define(version: 20170606083107) do
   end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "country",        null: false
     t.integer  "postal_code",    null: false
     t.string   "prefecture",     null: false
     t.string   "city",           null: false
     t.string   "street_address", null: false
-    t.string   "building",       null: false
+    t.string   "building"
     t.integer  "room_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
