@@ -1,0 +1,24 @@
+%body
+  .header-room
+    .header-room_top
+      .header-room_top_logo
+        .header-room_top_logo_airbnb
+          = link_to root_path do
+            = image_tag "logo2.png"
+      .header-room_top_step ステップ4: 最後に特徴をPRしてフィニッシュ！
+  .host-room
+    .host-room_contents
+      %h3 部屋の詳細を旅行者に紹介しよう
+      .host-room_contents_hosting
+        = form_for @room do |f|
+          .host-room_contents_hosting-question1 物件名
+          = f.text_field :name, autofocus: true, placeholder: "リスティングのタイトル", class: "select-default"
+          .host-room_contents_hosting-question2 概要
+          = f.text_area :discription, autofocus: true, placeholder: "宿泊施設の特徴を短くまとめよう", class: "select-default"
+          .host-room_contents_hosting-question2 写真
+          = f.file_field :image, class: "select-default"
+
+          = link_to "←戻る", new_user_room_path(current_user.id), class: "back-page"
+          = f.submit "次へ", class: "next-page"
+    .host-room_picture
+      = image_tag "hosting-side-image2"

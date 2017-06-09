@@ -1,0 +1,167 @@
+.header-narrow {
+  height: 50px;
+  width: 100%;
+  display: block;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4e4e4;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  padding: 10px 2px;
+  margin: 0;
+
+  &_top {
+    height: 64px;
+    width: 100%;
+
+    &_logo {
+      height: 64px;
+      width: 34px;
+      padding: 5px 24px;
+      float: left;
+
+      img {
+        height: 34px;
+        width: 34px;
+      }
+    }
+
+    &_search {
+      height: 44px;
+      width: 573px;
+      font-size: 19px;
+      line-height: 24px;
+      color: #484848;
+      border-radius: 4px;
+      border: 1px solid #DBDBDB;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+      padding: 0;
+      table-layout: fixed;
+      float: left;
+
+      &_box {
+        height: 44px;
+        width: 190px;
+        display: block;
+        float: left;
+
+        &-a {
+          font-family: "ヒラギノ角ゴ Pro";
+          font-size: 15px;
+          color: grey;
+          height: 24px;
+          width: 170px;
+          display: block;
+          float: left;
+          padding: 10px;
+          border-right: 1px solid #DBDBDB;
+        }
+
+        &-b {
+          font-size: 15px;
+          color: grey;
+          height: 24px;
+          width: 171px;
+          padding: 10px;
+          float: left;
+        }
+      }
+    }
+
+    &_right-contents {
+      height: 46px;
+      width: 400px;
+      font-size: 13px;
+      color: #aaa;
+      float: left;
+      padding-left: 780px;
+
+      &_be-host {
+        height: 16px;
+        width: 102px;
+        float: left;
+        padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
+      }
+
+      &_look-for-host {
+        height: 16px;
+        width: 222px;
+        float: left;
+        padding: 15px 0;
+      }
+
+      &_your-trip {
+        height: 16px;
+        width: 52px;
+        float: left;
+        padding: 15px 0;
+      }
+
+      &_your-messages {
+        height: 16px;
+        width: 92px;
+        float: left;
+        padding: 15px 0;
+      }
+
+      &_help {
+        height: 16px;
+        width: 66px;
+        float: left;
+        padding: 15px 0;
+      }
+
+      &_mypage {
+        height: 100px;
+        width: 88px;
+        float: left;
+        padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
+      }
+
+      &_log-out {
+        height: 100px;
+        width: 100px;
+        float: left;
+        padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
+      }
+
+      &_account {
+        height: 40px;
+        width: 119px;
+        float: left;
+        padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
+      }
+
+      &_log-in {
+        height: 40px;
+        width: 52px;
+        float: left;
+        padding: 15px 0;
+
+        a {
+          color: #aaa;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

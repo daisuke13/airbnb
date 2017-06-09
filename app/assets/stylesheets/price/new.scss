@@ -1,0 +1,94 @@
+.host-price {
+  height: 100vh;
+  width: calc(100vw - 200px);
+  margin: 0 100px;
+  padding: 10px 20px 0;
+  font-family: "ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic","MS Gothic","ＭＳ ゴシック","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+
+  &_contents {
+    height: 600px;
+    width: 500px;
+    margin-top: 70px;
+    float: left;
+
+    h3 {
+      font-size: 27px;
+      line-height: 36px;
+      padding: 2px 0;
+      color: #484848;
+    }
+
+    &_hosting {
+      height: 400px;
+      width: 450px;
+      margin-top: 50px;
+      overflow: scroll;
+
+      &-question1 {
+        font-size: 19px;
+        color: #aaa;
+        margin-bottom: 10px;
+        margin-left: 40px;
+      }
+
+      &-question2 {
+        margin-top: 40px;
+        font-size: 19px;
+        color: #aaa;
+        margin-top: 45px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+      }
+
+      .select-default {
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        width: 250px;
+        padding: 0 16px;
+        margin-left: 40px;
+        margin-right: 200px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .back-page {
+    margin-top: 60px;
+    font-size: 20px;
+    color: #aaa;
+    text-decoration: none;
+    margin-top: 50px;
+  }
+
+  .next-page {
+    height: 58px;
+    width: 140px;
+    background-color: #ff7e82;
+    border: #ff7e82;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 190px;
+    padding-top: 6px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &_picture {
+    margin-top: 80px;
+    float: right;
+    display: block;
+
+    img {
+      height: 550px;
+      width: 521px;
+    }
+  }
+}

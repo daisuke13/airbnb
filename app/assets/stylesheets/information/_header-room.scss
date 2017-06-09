@@ -1,0 +1,38 @@
+.header-room {
+  height: 71px;
+  width: 100%;
+  display: block;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4e4e4;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  padding: 0 2px;
+  margin: 0;
+
+  &_top {
+    height: 64px;
+    width: 100%;
+
+    &_logo {
+      height: 64px;
+      width: 110px;
+      padding: 0 24px;
+      float: left;
+
+      img {
+        height: 41px;
+        width: 104px;
+        padding-top: 10.5px;
+      }
+    }
+
+    &_step {
+      font-size: 19px;
+      color: #aaa;
+      height: 64px;
+      width: 600px;
+      padding-top: 18px;
+      float: left;
+    }
+  }
+}
