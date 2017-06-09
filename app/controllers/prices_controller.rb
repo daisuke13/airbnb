@@ -5,8 +5,9 @@ class PricesController < ApplicationController
 
   def create
     @price = Price.new(price_params)
+    @room = Room.find(params[:room_id])
     if @price.save
-      redirect_to room_path(@price)
+      redirect_to edit_room_path(@room)
     else
       render :new
     end
@@ -14,6 +15,6 @@ class PricesController < ApplicationController
 
   private
   def price_params
-    params.require(:location).permit(:price, :currency).merge(room_id: params[:room_id])
+    params.require(:price).permit(:price, :currency).merge(room_id: params[:room_id])
   end
 end

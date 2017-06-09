@@ -5,6 +5,7 @@ class Information < ApplicationRecord
   validates :bedrooms, presence: true
   validates :beds, presence: true
   validates :bathrooms, presence: true
+  validates :room_id, uniqueness: true
 
   belongs_to :room
 end

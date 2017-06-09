@@ -5,8 +5,9 @@ class InformationController < ApplicationController
 
   def create
     @information = Information.new(information_params)
+    @room = Room.find(params[:room_id])
     if @information.save
-      redirect_to new_room_location_path(@information)
+      redirect_to new_room_location_path(@room)
     else
       render :new
     end

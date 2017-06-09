@@ -5,8 +5,9 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
+    @room = Room.find(params[:room_id])
     if @location.save
-      redirect_to new_room_price_path(@location)
+      redirect_to new_room_price_path(@room)
     else
       render :new
     end

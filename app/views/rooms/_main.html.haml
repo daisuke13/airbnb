@@ -2,27 +2,31 @@
   .main_contents
     %h3
       最近見た物件
-    .main_contents_picture
-      = link_to root_path do
-        = image_tag "room1.png"
-      .main_contents_picture-price ¥7,681
-      .main_contents_picture-name I SETTE CONI - TRULLO EDERA
-      .main_contents_picture-info まるまる貸切・ベッド2台
-      .main_contents_picture-review レビュー80件
-    .main_contents_picture
-      = link_to root_path do
-        = image_tag "room2.png"
-      .main_contents_picture-price ¥42,991
-      .main_contents_picture-name Secluded Intown Treehouse
-      .main_contents_picture-info まるまる貸切・ベッド1台
-      .main_contents_picture-review レビュー229件
-    .main_contents_picture
-      = link_to root_path do
-        = image_tag "room3.png"
-      .main_contents_picture-price ¥57,322
-      .main_contents_picture-name Malibu Dream Airstorm
-      .main_contents_picture-info まるまる貸切・ベッド1台
-      .main_contents_picture-review レビュー155件
+    - @rooms.each do |room|
+      .main_contents_picture
+        = link_to root_path do
+          = image_tag(room.image.url)
+        .main_contents_picture-price
+          = room.price.price
+        .main_contents_picture-name
+          = room.name
+        .main_contents_picture-info
+          = room.information.room_category
+        .main_contents_picture-review レビュー80件
+      / .main_contents_picture
+      /   = link_to root_path do
+      /     = image_tag "room2.png"
+      /   .main_contents_picture-price ¥42,991
+      /   .main_contents_picture-name Secluded Intown Treehouse
+      /   .main_contents_picture-info まるまる貸切・ベッド1台
+      /   .main_contents_picture-review レビュー229件
+      / .main_contents_picture
+      /   = link_to root_path do
+      /     = image_tag "room3.png"
+      /   .main_contents_picture-price ¥57,322
+      /   .main_contents_picture-name Malibu Dream Airstorm
+      /   .main_contents_picture-info まるまる貸切・ベッド1台
+      /   .main_contents_picture-review レビュー155件
 
     %h3
       好評受付中 in 東京

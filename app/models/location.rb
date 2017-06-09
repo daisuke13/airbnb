@@ -5,6 +5,7 @@ class Location < ApplicationRecord
   validates :city, presence: true
   validates :street_address, presence: true
   validates :city, presence: true
+  validates :room_id, uniqueness: true
 
   belongs_to :room
 end
