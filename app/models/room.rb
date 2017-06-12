@@ -5,4 +5,5 @@ class Room < ApplicationRecord
   has_one :information
   has_one :location
   has_one :price
+  has_many :bookings
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :information
       resources :prices
       resources :locations
+      resources :bookings
     end
   end
 end

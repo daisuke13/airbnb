@@ -1,3 +1,32 @@
 %body
   = render 'rooms/header-narrow'
+  .room-information
+    .room-information_picture
+      = image_tag(@room.image.url)
+    .room-information_content
+      .room-information_content_left-content
+        .room-information_content_left-content_title
+          = @room.name
+        .room-information_content_left-content_subtitle
+          #{@room.location.city}, #{@room.location.prefecture}, #{@room.location.country}
+      .room-information_content_booking
+        .room-information_content_booking-bar
+          ¥#{@room.price.price}
+          %span#price /1泊
+        .room-information_content_booking-box
+          .room-information_content_booking-box_info
+            = form_for [@room, @booking] do |f|
+              .room-information_content_booking-box_info_check-in
+                .room-information_content_booking-box_info_check-in-text チェックイン
+                .room-information_content_booking-box_info_check-in-date
+                  =f.date_select :check_in, {}, class: "select-default"
+              .room-information_content_booking-box_info_check-out
+                .room-information_content_booking-box_info_check-out-text チェックアウト
+                .room-information_content_booking-box_info_check-out-date
+                  = f.date_select :check_out
+              .room-information_content_booking-box_info_check-guest
+                .room-information_content_booking-box_info_check-guest-text ゲスト
+                .room-information_content_booking-box_info_check-guest-number
+                  = f.select :guest, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
+                  = f.submit "予約をリクエスト"
   = render 'rooms/footer'
