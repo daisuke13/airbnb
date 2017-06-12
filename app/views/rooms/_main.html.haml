@@ -4,29 +4,15 @@
       最近見た物件
     - @rooms.each do |room|
       .main_contents_picture
-        = link_to root_path do
+        = link_to room_path(room.id) do
           = image_tag(room.image.url)
         .main_contents_picture-price
-          = room.price.price
+          ¥#{room.price.price}
         .main_contents_picture-name
           = room.name
         .main_contents_picture-info
           = room.information.room_category
         .main_contents_picture-review レビュー80件
-      / .main_contents_picture
-      /   = link_to root_path do
-      /     = image_tag "room2.png"
-      /   .main_contents_picture-price ¥42,991
-      /   .main_contents_picture-name Secluded Intown Treehouse
-      /   .main_contents_picture-info まるまる貸切・ベッド1台
-      /   .main_contents_picture-review レビュー229件
-      / .main_contents_picture
-      /   = link_to root_path do
-      /     = image_tag "room3.png"
-      /   .main_contents_picture-price ¥57,322
-      /   .main_contents_picture-name Malibu Dream Airstorm
-      /   .main_contents_picture-info まるまる貸切・ベッド1台
-      /   .main_contents_picture-review レビュー155件
 
     %h3
       好評受付中 in 東京

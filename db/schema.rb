@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606083107) do
+ActiveRecord::Schema.define(version: 20170610142428) do
+
+  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "check_in",        null: false
+    t.date     "check_out",       null: false
+    t.string   "guest",           null: false
+    t.integer  "card_number"
+    t.date     "expiration_date"
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["room_id"], name: "index_bookings_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
 
   create_table "information", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "room_type",         null: false
@@ -76,6 +90,8 @@ ActiveRecord::Schema.define(version: 20170606083107) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "rooms"
+  add_foreign_key "bookings", "users"
   add_foreign_key "information", "rooms"
   add_foreign_key "locations", "rooms"
   add_foreign_key "prices", "rooms"
