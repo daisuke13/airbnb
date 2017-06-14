@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170610142428) do
     t.date     "check_in",        null: false
     t.date     "check_out",       null: false
     t.string   "guest",           null: false
+    t.string   "billing_address"
     t.integer  "card_number"
     t.date     "expiration_date"
     t.integer  "user_id"

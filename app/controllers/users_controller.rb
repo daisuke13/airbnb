@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
-  def edit
+  def show
+    @booking = Booking.new
   end
 
-  def show
+  def edit
+    @booking = Booking.new
+  end
+
+  def update
   end
 end

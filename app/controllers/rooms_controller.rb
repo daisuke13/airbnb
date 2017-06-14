@@ -31,8 +31,8 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
     @booking = Booking.new
+    @room = Room.find(params[:id])
   end
 
   private

@@ -1,2 +1,13 @@
 %body
   .mypage
+    .mypage_name
+    .mypage_email
+    .mypage_credit-card-info カード情報を入力する
+    = form_for @booking, url: user_path(@booking) do |f|
+      .mypage_credit-card-info_billing-address
+      = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+      .mypage_credit-card-info_card-number
+      = f.field :card_number, autofocus: true, placeholder: "16桁で入力してください", class: "select-default"
+      .mypage_credit-card-info_expiration-date
+      = f.date_select :check_in, {}, class: "select-default"
+      = f.submit "カード情報を更新する"
