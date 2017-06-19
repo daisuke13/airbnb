@@ -12,7 +12,7 @@
       .host-price_contents_hosting
         = form_for [:room, @price] do |f|
           .host-price_contents_hosting-question1 料金
-          = f.text_field :price, autofocus: true, placeholder: "例: 5000円", class: "select-default"
+          = f.text_field :price, autofocus: true, placeholder: "例: 5000", class: "select-default"
           .host-price_contents_hosting-question2 通貨
           = f.select :currency, [["選択する", "null"], ["JPY", "JPY"], ["USD", "USD"]], {}, class: "select-default"
           = link_to "←戻る", new_user_room_path(current_user.id), class: "back-page"

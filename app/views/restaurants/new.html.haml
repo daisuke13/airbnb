@@ -1,0 +1,20 @@
+%body
+  .header-room
+    .header-room_top
+      .header-room_top_logo
+        .header-room_top_logo_airbnb
+          = link_to root_path do
+            = image_tag "logo2.png"
+      .header-room_top_step ステップ5: 近隣レストラン情報を入力
+  .host-restaurant
+    .host-restaurant_contents
+      %h3 オススメのレストランを選択してください
+      .host-restaurant_contents_hosting
+
+
+        %input.js--apply{:type => "button", :value => "apply"}/
+        .test
+
+    .host-restaurant_picture
+      = image_tag "hosting-side-image2"
+

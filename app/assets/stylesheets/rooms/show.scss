@@ -39,6 +39,16 @@
         border-bottom: 1px solid #dcdcdc;
         text-align: center;
       }
+
+      &_listing {
+        color: #484848;
+        font-size: 22px;
+        padding-top: 25px;
+      }
+
+      &_discription {
+        font-size: 17px;
+      }
     }
 
     &_booking {

@@ -1,13 +1,23 @@
 %body
   .mypage
-    .mypage_name
-    .mypage_email
-    .mypage_credit-card-info カード情報を入力する
-    = form_for @booking, url: user_path(@booking) do |f|
-      .mypage_credit-card-info_billing-address
-      = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
-      .mypage_credit-card-info_card-number
-      = f.field :card_number, autofocus: true, placeholder: "16桁で入力してください", class: "select-default"
-      .mypage_credit-card-info_expiration-date
-      = f.date_select :check_in, {}, class: "select-default"
-      = f.submit "カード情報を更新する"
+    .mypage_user-info ユーザー情報
+    .mypage_name 名前: #{current_user.name}
+    .mypage_email email: #{current_user.email}
+    - if current_user.billing_address.present? && current_user.card_number.present? && current_user.expiration_date.present?
+      .mypage_credit-card-info
+        .mypage_credit-card-info_billing-address ・請求先住所の国 #{current_user.billing_address}
+        .mypage_credit-card-info_card-number ・クレジットカード番号 #{current_user.card_number}
+        .mypage_credit-card-info_expiration-date ・有効期限 #{current_user.expiration_date}
+        .mypage_credit-card-info_edit-info
+        = link_to "クレジットカード情報を編集する", edit_user_path(current_user.id)
+    - else
+      .mypage_credit-card-info
+      = form_for current_user do |f|
+        .mypage_credit-card-info_billing-address ・請求先住所の国
+        = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+        .mypage_credit-card-info_card-number ・クレジットカード番号
+        = f.text_field :card_number, autofocus: true, placeholder: "16桁で入力してください", class: "select-default"
+        .mypage_credit-card-info_expiration-date ・有効期限
+        = f.date_select :expiration_date, {}, class: "select-default"
+        = f.submit "カード情報を更新する", class: "next-page"
+        .mypage_credit-card-info_edit-info

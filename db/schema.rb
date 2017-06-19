@@ -10,19 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610142428) do
+ActiveRecord::Schema.define(version: 20170619082404) do
 
   create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.date     "check_in",        null: false
-    t.date     "check_out",       null: false
-    t.string   "guest",           null: false
-    t.string   "billing_address"
-    t.integer  "card_number"
-    t.date     "expiration_date"
+    t.date     "check_in",                   null: false
+    t.date     "check_out",                  null: false
+    t.string   "guest",                      null: false
     t.integer  "user_id"
     t.integer  "room_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "completed",  default: false, null: false
     t.index ["room_id"], name: "index_bookings_on_room_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
@@ -62,6 +60,14 @@ ActiveRecord::Schema.define(version: 20170610142428) do
     t.index ["room_id"], name: "index_prices_on_room_id", using: :btree
   end
 
+  create_table "restaurants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "image",      null: false
+    t.string   "url",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "image"
@@ -86,6 +92,9 @@ ActiveRecord::Schema.define(version: 20170610142428) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name",                                null: false
+    t.string   "billing_address"
+    t.integer  "card_number"
+    t.date     "expiration_date"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["name"], name: "index_users_on_name", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

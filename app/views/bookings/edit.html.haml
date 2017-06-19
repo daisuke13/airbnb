@@ -4,15 +4,24 @@
     .room-booking_content
       .room-booking_content_left-content
         .room-booking_content_left-content_payment 支払い
-        = form_for @booking do |f|
+        = form_for current_user, url: user_path do |f|
           .room-booking_content_left-content_cash-back-1 部分返金可
           .room-booking_content_left-content_cash-back-2 現地時間 #{@booking.check_in.ago(7.days).strftime('%m月%d日')}の16時までにキャンセルすれば ¥#{(@room.price.price * 0.75).floor} 返金されます。それ以降の事前キャンセルでは清掃料金とサービス料のみ返金されます。
-          .room-booking_content_left-content_country 請求先住所の国
-          = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
-          .room-booking_content_left-content_card-info お支払い種別
-          = f.select :card_number, [["選択する", "null"], ["1234567890", "1234567890"]], {}, class: "select-default"
-          .room-booking_content_left-content_card-expiration-date 有効期限: 05/21
-          .room-booking_content_left-content_card-house-rules ハウスルール、キャンセルポリシー：厳格、ゲスト返金ポリシーに同意します。表示中の、サービス料を含む合計金額を支払うことにも同意します。
+          - if current_user.card_number.present?
+            .room-booking_content_left-content_country 請求先住所の国
+            = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-info クレジットカード番号
+            = f.select :card_number, [["選択する", "null"], ["#{current_user.card_number}", "#{current_user.card_number}"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-expiration-date 有効期限: #{current_user.expiration_date}
+            .room-booking_content_left-content_card-house-rules ハウスルール、キャンセルポリシー：厳格、ゲスト返金ポリシーに同意します。表示中の、サービス料を含む合計金額を支払うことにも同意します。
+          - else
+            .room-booking_content_left-content_country 請求先住所の国
+            = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-info クレジットカード番号
+            = f.text_field :card_number, autofocus: true, placeholder: "16桁で入力してください", class: "select-default"
+            .room-booking_content_left-content_card-expiration-date 有効期限
+            = f.date_select :expiration_date, {}, class: "select-default"
+            .room-booking_content_left-content_card-house-rules ハウスルール、キャンセルポリシー：厳格、ゲスト返金ポリシーに同意します。表示中の、サービス料を含む合計金額を支払うことにも同意します。
           = f.submit "確認して支払う", class: "next-page"
       .room-booking_content_booking
         .room-booking_content_booking_picture

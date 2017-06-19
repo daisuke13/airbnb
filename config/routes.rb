@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :prices, only: [:new, :create]
       resources :locations, only: [:new, :create]
       resources :bookings, only: [:create, :edit, :update]
+      resources :restaurants, only: [:new, :create]
     end
   end
 end

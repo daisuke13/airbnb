@@ -1,4 +1,59 @@
 .mypage {
-  height: 1000px;
-  width: 100vw;
+  color: #696969;
+  height: 650px;
+  width: 450px;
+  padding-top: 100px;
+  padding-left: 300px;
+
+  .mypage_user-info {
+    color: #484848;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+
+  .mypage_credit-card-info {
+    color: #484848;
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    &_card-number {
+      padding-top: 10px;
+    }
+
+    &_expiration-date {
+      padding-top: 10px;
+    }
+  }
+
+  .select-default {
+    position: relative;
+    height: 38px;
+    width: 200px;
+    padding: 0 16px;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 200px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .next-page {
+    height: 58px;
+    width: 200px;
+    background-color: #ff7e82;
+    border: #ff7e82;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 0px;
+    padding-top: 6px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+  }
 }

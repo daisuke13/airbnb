@@ -13,7 +13,7 @@
           / = image_tag "mypage.png"
           / %ul
           /   %li
-          = link_to "マイページ", "/users/#{current_user.id}"
+          = link_to "マイページ", user_path(current_user.id)
         .header-narrow_top_right-contents_log-out
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
       - else
