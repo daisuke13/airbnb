@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
-      redirect_to root_path(@room), notice: "ホスティング完了"
+      redirect_to new_room_restaurant_path(@room), notice: "ホスティング完了"
     else
       flash.now[:alert] = "エラーが発生しました"
       render :edit
@@ -31,8 +31,8 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
     @booking = Booking.new
+    @room = Room.find(params[:id])
   end
 
   private

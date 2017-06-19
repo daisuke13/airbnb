@@ -17,8 +17,7 @@
       .header_top_right-contents_help ヘルプ
       - if user_signed_in?
         .header_top_right-contents_mypage
-
-          = link_to "マイページ", "/users/#{current_user.id}"
+          = link_to "マイページ", user_path(current_user.id)
         .header_top_right-contents_log-out
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'post'
       - else

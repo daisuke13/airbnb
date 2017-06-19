@@ -3,27 +3,42 @@
   .room-booking
     .room-booking_content
       .room-booking_content_left-content
-        .room-booking_content_left-content_title
-          = @room.name
-        .room-booking_content_left-content_payment
-          #{@room.location.city}, #{@room.location.prefecture}, #{@room.location.country}
+        .room-booking_content_left-content_payment 支払い
+        = form_for current_user, url: user_path do |f|
+          .room-booking_content_left-content_cash-back-1 部分返金可
+          .room-booking_content_left-content_cash-back-2 現地時間 #{@booking.check_in.ago(7.days).strftime('%m月%d日')}の16時までにキャンセルすれば ¥#{(@room.price.price * 0.75).floor} 返金されます。それ以降の事前キャンセルでは清掃料金とサービス料のみ返金されます。
+          - if current_user.card_number.present?
+            .room-booking_content_left-content_country 請求先住所の国
+            = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-info クレジットカード番号
+            = f.select :card_number, [["選択する", "null"], ["#{current_user.card_number}", "#{current_user.card_number}"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-expiration-date 有効期限: #{current_user.expiration_date}
+            .room-booking_content_left-content_card-house-rules ハウスルール、キャンセルポリシー：厳格、ゲスト返金ポリシーに同意します。表示中の、サービス料を含む合計金額を支払うことにも同意します。
+          - else
+            .room-booking_content_left-content_country 請求先住所の国
+            = f.select :billing_address, [["選択する", "null"], ["日本", "日本"]], {}, class: "select-default"
+            .room-booking_content_left-content_card-info クレジットカード番号
+            = f.text_field :card_number, autofocus: true, placeholder: "16桁で入力してください", class: "select-default"
+            .room-booking_content_left-content_card-expiration-date 有効期限
+            = f.date_select :expiration_date, {}, class: "select-default"
+            .room-booking_content_left-content_card-house-rules ハウスルール、キャンセルポリシー：厳格、ゲスト返金ポリシーに同意します。表示中の、サービス料を含む合計金額を支払うことにも同意します。
+          = f.submit "確認して支払う", class: "next-page"
       .room-booking_content_booking
-        .room-booking_content_booking-bar
-          ¥#{@room.price.price}
-          %span#price /1泊
-        .room-booking_content_booking-box
-          .room-booking_content_booking-box_info
-            = form_for [@room, @booking], url: booking_path do |f|
-              .room-booking_content_booking-box_info_check-in
-                .room-booking_content_booking-box_info_check-in-text チェックイン
-                .room-booking_content_booking-box_info_check-in-date
-                  =f.date_select :check_in, {}, class: "select-default"
-              .room-booking_content_booking-box_info_check-out
-                .room-booking_content_booking-box_info_check-out-text チェックアウト
-                .room-booking_content_booking-box_info_check-out-date
-                  = f.date_select :check_out
-              .room-booking_content_booking-box_info_check-guest
-                .room-booking_content_booking-box_info_check-guest-text ゲスト
-                .room-booking_content_booking-box_info_check-guest-number
-                  = f.select :guest, [["選択する", "null"], ["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"]], {}, class: "select-default"
-                  = f.submit "予約をリクエスト"
+        .room-booking_content_booking_picture
+          = image_tag(@room.image.url)
+        .room-booking_content_booking-info
+          .room-booking_content_booking-info-host ホストは#{@room.user.name}さん
+          .room-booking_content_booking-info-name #{@room.name}
+          .room-booking_content_booking-info-category #{@room.information.room_category}
+          .room-booking_content_booking-info-location #{@room.location.city}, #{@room.location.prefecture}, #{@room.location.country}
+          .room-booking_content_booking-info-check-in
+            .room-booking_content_booking-info-check-in-date チェックイン
+            %p
+              20#{@booking.check_in.strftime('%y年%m月%d日')}
+          .room-booking_content_booking-info-check-out
+            .room-booking_content_booking-info-check-out-date チェックアウト
+            %p
+              20#{@booking.check_out.strftime('%y年%m月%d日')}
+          .room-booking_content_booking-info-price
+          .room-booking_content_booking-info-price-total 合計額
+          .room-booking_content_booking-info-price-price ¥#{@room.price.price} JPY

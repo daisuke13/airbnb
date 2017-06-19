@@ -9,6 +9,10 @@
           = @room.name
         .room-information_content_left-content_subtitle
           #{@room.location.city}, #{@room.location.prefecture}, #{@room.location.country}
+        .room-information_content_left-content_listing リスティングについて
+        .room-information_content_left-content_discription
+          = simple_format @room.discription
+
       .room-information_content_booking
         .room-information_content_booking-bar
           ¥#{@room.price.price}
