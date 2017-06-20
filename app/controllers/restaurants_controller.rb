@@ -1,26 +1,25 @@
 class RestaurantsController < ApplicationController
   def new
-    @restaurant = Restaurant.new
-    respond_to do |format|
-      format.html
-      format.json {
-        @restaurants = Restaurants.where("id > ?", params[:id])
-      }
-    end
   end
 
   def create
-    @restaurant = Restaurant.new(restaurant_params)
-    @room = Room.find(params[:room_id])
-    if @restaurant.save
-      redirect_to root_path(@room)
-    else
-      render :new
+    @restaurants = restaurant_params
+    binding.pry
+    @restaurants.each do |restaurant|
+      a_restaurant = Restaurant.new(restaurant)
+      a_restaurant.save
     end
+    redirect_to edit_restaurant_path
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
-  def price_params
-    params.require(:restaurant).permit(:name, :image, :url).merge(room_id: params[:room_id])
+  def restaurant_params
+    params.require(:restaurants).map{ |restaurant| restaurant.permit(:name, :image, :url )}
   end
 end
