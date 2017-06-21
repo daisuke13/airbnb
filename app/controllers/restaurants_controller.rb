@@ -3,23 +3,22 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurants = restaurant_params
-    binding.pry
-    @restaurants.each do |restaurant|
-      a_restaurant = Restaurant.new(restaurant)
-      a_restaurant.save
+    @url = restaurant_params
+    respond_to do |format|
+      format.json
     end
-    redirect_to edit_restaurant_path
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   private
   def restaurant_params
-    params.require(:restaurants).map{ |restaurant| restaurant.permit(:name, :image, :url )}
+    # params.require(:restaurants).map{ |restaurant| restaurant.permit(:name, :image, :url )}
+    params.require(:restaurants).each do |key, value|
+      rest = {}
+      key.each do |key2, value2|
+        rest.store(key2, value2)
+      end
+      rest = rest.merge(room_id: params[:room_id])
+      Restaurant.create(rest)
+    end
   end
 end

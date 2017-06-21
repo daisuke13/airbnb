@@ -42,10 +42,10 @@ $(document).on('click', '#restaurantBtn', function() {
   $.each(idx,function(i,ele) {
     $('.host-restaurants_result').append("<p>" + "<img class=rest-img src=" + apiResult.rest[ele].image_url.shop_image1 + ">" + apiResult.rest[ele].name + "</p>");
   });
-  $('.host-restaurants_result').append("<input id=next-page type=button value=" + "次へ" + ">");
+  $('.host-restaurants_btn').append("<input class=next-page type=button value=" + "登録する" + ">");
 });
 
-$(document).on('click', '#next-page', function() {
+$(document).on('click', '.next-page', function() {
   var $checkedbox = $('.checkbox:checked');
   var idx = [];
   $checkedbox.each(function(i,ele) {
@@ -61,6 +61,9 @@ $(document).on('click', '#next-page', function() {
     data: JSON.stringify({restaurants: restaurantsData}),
     contentType: 'application/json',
     dataType: 'json'
+  })
+  .done(function(data) {
+    window.location.href = "/";
   })
 })
 

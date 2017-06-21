@@ -36,6 +36,7 @@
       height: 300px;
       width: 1050px;
       margin-top: 0px;
+      margin-bottom: 40px;
       overflow: scroll;
 
       .restaurants-info {
@@ -51,6 +52,19 @@
 
   &_result {
 
+    #restaurantBtn {
+      height: 38px;
+      width: 300px;
+      background-color: #ff7e82;
+      margin-bottom: 20px;
+      border: #ff7e82;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     img {
       height: 90px;
       width: 120px;
@@ -59,37 +73,30 @@
     }
   }
 
-  .back-page {
-    margin-top: 60px;
-    font-size: 20px;
-    color: #aaa;
-    text-decoration: none;
-    margin-top: 50px;
-  }
+  &_btn {
+    margin-bottom: 100px;
 
-  .next-page {
-    height: 58px;
-    width: 140px;
-    background-color: #ff7e82;
-    border: #ff7e82;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 100px;
-    margin-left: 190px;
-    padding-top: 6px;
-    font-size: 18px;
-    color: #ffffff;
-    text-decoration: none;
-  }
+    .back-page {
+      margin-top: 60px;
+      font-size: 20px;
+      color: #aaa;
+      text-decoration: none;
+      margin-top: 50px;
+    }
 
-  &_picture {
-    margin-top: 80px;
-    float: right;
-    display: block;
-
-    img {
-      height: 550px;
-      width: 521px;
+    .next-page {
+      height: 58px;
+      width: 140px;
+      background-color: #ff7e82;
+      border: #ff7e82;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 100px;
+      margin-left: 190px;
+      padding-top: 6px;
+      font-size: 18px;
+      color: #ffffff;
+      text-decoration: none;
     }
   }
 }
