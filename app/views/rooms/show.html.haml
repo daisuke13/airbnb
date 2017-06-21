@@ -12,6 +12,9 @@
         .room-information_content_left-content_listing リスティングについて
         .room-information_content_left-content_discription
           = simple_format @room.discription
+        .room-information_content_left-content_restaurant
+          - @room.restaurants.each do |restaurant|
+            #{restaurant.image}, #{restaurant.name}, #{restaurant.url}
 
       .room-information_content_booking
         .room-information_content_booking-bar

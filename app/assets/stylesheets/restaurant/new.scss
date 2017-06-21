@@ -1,4 +1,4 @@
-.host-restaurant {
+.host-restaurants {
   height: 100vh;
   width: calc(100vw - 200px);
   margin: 0 100px;
@@ -7,87 +7,96 @@
 
   &_contents {
     height: 600px;
-    width: 500px;
-    margin-top: 70px;
+    width: 600px;
+    margin-top: 90px;
     float: left;
 
     h3 {
       font-size: 27px;
       line-height: 36px;
-      padding: 2px 0;
       color: #484848;
+      margin: 0;
+      padding-bottom: 20px;
+    }
+
+    .js-apply {
+      height: 38px;
+      width: 300px;
+      background-color: #ff7e82;
+      margin-bottom: 20px;
+      border: #ff7e82;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+      text-decoration: none;
     }
 
     &_hosting {
-      height: 400px;
-      width: 450px;
-      margin-top: 50px;
+      height: 300px;
+      width: 1050px;
+      margin-top: 0px;
+      margin-bottom: 40px;
       overflow: scroll;
 
-      &-question1 {
-        font-size: 19px;
-        color: #aaa;
-        margin-bottom: 10px;
-        margin-left: 40px;
-      }
+      .restaurants-info {
 
-      &-question2 {
-        margin-top: 40px;
-        font-size: 19px;
-        color: #aaa;
-        margin-top: 45px;
-        margin-bottom: 10px;
-        margin-left: 40px;
-      }
-
-      .select-default {
-        position: relative;
-        height: 48px;
-        width: 250px;
-        padding: 0 16px;
-        margin-left: 40px;
-        margin-right: 200px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: 0;
-        font-size: 16px;
-        line-height: 1.5;
-        cursor: pointer;
+        img {
+          height: 90px;
+          width: 120px;
+          padding-right: 10px;
+        }
       }
     }
   }
 
-  .back-page {
-    margin-top: 60px;
-    font-size: 20px;
-    color: #aaa;
-    text-decoration: none;
-    margin-top: 50px;
-  }
+  &_result {
 
-  .next-page {
-    height: 58px;
-    width: 140px;
-    background-color: #ff7e82;
-    border: #ff7e82;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 100px;
-    margin-left: 190px;
-    padding-top: 6px;
-    font-size: 18px;
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  &_picture {
-    margin-top: 80px;
-    float: right;
-    display: block;
+    #restaurantBtn {
+      height: 38px;
+      width: 300px;
+      background-color: #ff7e82;
+      margin-bottom: 20px;
+      border: #ff7e82;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+      text-decoration: none;
+    }
 
     img {
-      height: 550px;
-      width: 521px;
+      height: 90px;
+      width: 120px;
+      padding-left: 18px;
+      padding-right: 10px;
+    }
+  }
+
+  &_btn {
+    margin-bottom: 100px;
+
+    .back-page {
+      margin-top: 60px;
+      font-size: 20px;
+      color: #aaa;
+      text-decoration: none;
+      margin-top: 50px;
+    }
+
+    .next-page {
+      height: 58px;
+      width: 140px;
+      background-color: #ff7e82;
+      border: #ff7e82;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 100px;
+      margin-left: 190px;
+      padding-top: 6px;
+      font-size: 18px;
+      color: #ffffff;
+      text-decoration: none;
     }
   }
 }

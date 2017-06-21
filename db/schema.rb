@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 20170619082404) do
     t.string   "name",       null: false
     t.string   "image",      null: false
     t.string   "url",        null: false
+    t.integer  "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_restaurants_on_room_id", using: :btree
   end
 
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -105,5 +107,6 @@ ActiveRecord::Schema.define(version: 20170619082404) do
   add_foreign_key "information", "rooms"
   add_foreign_key "locations", "rooms"
   add_foreign_key "prices", "rooms"
+  add_foreign_key "restaurants", "rooms"
   add_foreign_key "rooms", "users"
 end

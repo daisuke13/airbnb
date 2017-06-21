@@ -5,16 +5,13 @@
         .header-room_top_logo_airbnb
           = link_to root_path do
             = image_tag "logo2.png"
-      .header-room_top_step ステップ5: 近隣レストラン情報を入力
-  .host-restaurant
-    .host-restaurant_contents
+      .header-room_top_step ステップ5: 最後に近隣レストラン情報を入力
+  .host-restaurants
+    .host-restaurants_contents
       %h3 オススメのレストランを選択してください
-      .host-restaurant_contents_hosting
-
-
-        %input.js--apply{:type => "button", :value => "apply"}/
-        .test
-
-    .host-restaurant_picture
-      = image_tag "hosting-side-image2"
-
+      %input.js-apply{:type => "button", :value => "近隣レストラン情報を表示"}/
+      .host-restaurants_contents_hosting
+        .restaurants-info
+      .host-restaurants_result
+      .host-restaurants_btn
+        = link_to "←戻る", new_user_room_path(current_user.id), class: "back-page"
