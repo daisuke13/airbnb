@@ -65,6 +65,9 @@ $(document).on('click', '.next-page', function() {
   .done(function(data) {
     window.location.href = "/";
   })
+  .fail(function(data) {
+    console(aaaaa)
+  })
 })
 
 
