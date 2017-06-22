@@ -4,8 +4,8 @@
   var params = {
     keyid: 'a8a1db088478b8d25870b56d45567274',
     format: 'json',
-    latitude: 35.670083,
-    longitude: 139.763267,
+    latitude: 35.658034,
+    longitude: 139.701636,
     hit_per_page: 50,
     range: 1
   };
