@@ -13,8 +13,14 @@
         .room-information_content_left-content_discription
           = simple_format @room.discription
         .room-information_content_left-content_restaurant
+          ホストオススメのレストラン
           - @room.restaurants.each do |restaurant|
-            #{restaurant.image}, #{restaurant.name}, #{restaurant.url}
+            .room-information_content_left-content_restaurant-image
+            = image_tag(restaurant.image)
+            .room-information_content_left-content_restaurant-name
+              #{restaurant.name}
+            .room-information_content_left-content_restaurant-url
+            = link_to restaurant.url, restaurant.url
 
       .room-information_content_booking
         .room-information_content_booking-bar
