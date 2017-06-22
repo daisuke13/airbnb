@@ -46,7 +46,6 @@ $(document).on('click', '#restaurantBtn', function() {
 });
 
 $(document).on('click', '.next-page', function() {
-  console.log(aaaaaaa)
   var $checkedbox = $('.checkbox:checked');
   var idx = [];
   $checkedbox.each(function(i,ele) {
@@ -54,7 +53,6 @@ $(document).on('click', '.next-page', function() {
   });
   var restaurantsData = []
   $.each(idx, function(i,id) {
-    console.log(bbbbbbb)
     restaurantsData.push({name: apiResult.rest[id].name, image: apiResult.rest[id].image_url.shop_image1, url: apiResult.rest[id].url})
   })
   $.ajax({
@@ -68,7 +66,6 @@ $(document).on('click', '.next-page', function() {
     window.location.href = "/";
   })
   .fail(function(data) {
-    console(aaaaa)
   })
 })
 
