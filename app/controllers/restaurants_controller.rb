@@ -3,7 +3,6 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    binding.pry
     @url = restaurant_params
     respond_to do |format|
       format.json
